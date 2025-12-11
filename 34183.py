@@ -1,9 +1,3 @@
 n, m, a, b = map(int, input().split())
-chair = 0
-for i in range(n):
-    chair += 3
-if chair < m: print(0)
-else:
-    price = a * (chair - m)
-
-    print(price + b)
+res = (n * 3 - m) * a + b if n * 3 - m > 0 else 0
+print(res)
