@@ -1,0 +1,1 @@
+print('Success!' if int(input()) + 2 >= 8 else 'Oh My God!')    
