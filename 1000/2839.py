@@ -1,23 +1,19 @@
 n = int(input())
-count = 0
-if n%5!=0 and n%3!=0:
-    count = -1
 
-while True:
-    print(count, n)
-    if count == -1:
-        break
-    
-    if n-5 >= 0:
-        count += 1
-        n -= 5
-    elif n-3 >= 0:
-        count += 1
+if n % 5 == 0:
+    print(n // 5)
+else:
+    p = 0
+    while n > 0:
         n -= 3
-    
-    if n-5<0 or n-3<0:
-        break
-
-if n == 3 or n == 5:
-    print(count + 1)
-else: print(count)
+        p += 1
+        if n % 5 == 0:
+            p += n // 5
+            print(p)
+            break
+        elif n == 1 or n == 2:
+            print(-1)
+            break
+        elif n == 0:
+            print(p)
+            break
