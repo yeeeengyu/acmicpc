@@ -1,18 +1,8 @@
-zero = 0
-one = 0
-
-def fib(n):
-    global zero; global one
-    if n == 0:
-        zero += 1
-        return 0
-    elif n == 1:
-        one += 1
-        return 1
-    else:
-        return fib(n -1 ) + fib(n - 2)
-
-for i in range(int(input())):
-    n = fib(int(input()))
-    print(zero, one)
-    zero, one = 0, 0
+n = int(input())
+dp = [0] * (n + 1)
+dp[0] = (1, 0)
+dp[1] = (0, 1)
+for i in range(n):
+    a = int(input())
+    dp[a][0] = dp[a-1][0] + dp[a-2][0]
+    dp[a][1] = dp[a-1][1] + dp[a-2][1]
